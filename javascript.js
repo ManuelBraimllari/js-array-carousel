@@ -22,3 +22,31 @@ for (let i = 0; i < arrImages.length; i++) {
     eleSlider.append(eleimg);
 }
 
+const listEleImg = document.querySelectorAll('.slider-img'); 
+let activeIndex = 0;
+
+eleBtnUp.addEventListener ('click', function (){
+    listEleImg[activeIndex].classList.remove('active');
+    
+    if (activeIndex === listEleImg.length - 1) {
+		activeIndex = 0
+	}else{
+        activeIndex++;
+    }
+    listEleImg[activeIndex].classList.add('active');
+	
+
+})
+
+eleBtnDown.addEventListener('click', function () {
+	listEleImg[activeIndex].classList.remove('active');
+
+    if (activeIndex === 0) {
+		activeIndex = listEleImg.length -1;
+	}else{
+        activeIndex--;
+    }
+
+	listEleImg[activeIndex].classList.add('active');
+
+});
